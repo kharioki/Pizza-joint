@@ -8,6 +8,8 @@ const Home = () => {
       className="home container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      // duration can only be used for tween type of transition
+      transition={{ delay: 1.5, duration: 1.5 }}
     >
       <h2>Welcome to Pizza Joint</h2>
       <Link to="/base">
