@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -33,6 +33,12 @@ const childVariants = {
 };
 
 const Order = ({ pizza }) => {
+  const [showTitle, setShowTitle] = useState(true);
+
+  setTimeout(() => {
+    setShowTitle(false);
+  }, 4000);
+
   return (
     <motion.div
       className="container order"
@@ -40,7 +46,7 @@ const Order = ({ pizza }) => {
       initial="hidden"
       animate="visible"
     >
-      <h2>Thank you for your order :)</h2>
+      {showTitle && <h2>Thank you for your order :)</h2>}
       <motion.p variants={childVariants}>
         You ordered a {pizza.base} pizza with:
       </motion.p>
