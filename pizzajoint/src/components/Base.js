@@ -19,11 +19,9 @@ const containerVariants = {
 
 const nextVariants = {
   hidden: {
-    opacity: 0,
     x: '-100vw'
   },
   visible: {
-    opacity: 1,
     x: 0,
     transition: {
       type: 'spring',
@@ -60,12 +58,7 @@ const Base = ({ addBase, pizza }) => {
       </ul>
 
       {pizza.base && (
-        <motion.div
-          className="next"
-          variants={nextVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <motion.div className="next" variants={nextVariants}>
           <Link to="/toppings">
             <motion.button
               whileHover={{
